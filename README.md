@@ -8,7 +8,7 @@ Esta documentação tem como objetivo explicar a arquitetura de dados implementa
 A arquitetura do Data Lake foi projetada com o objetivo de ser simples, eficiente e econômica. Considerando que estamos operando em um ambiente de nuvem, onde custos podem se acumular rapidamente, a otimização dos recursos foi uma prioridade. Sendo assim, esta arquitetura se baseia nos seguintes serviços da AWS: 
 
 # Desenho da arquitetura: 
-![image](https://github.com/user-attachments/assets/f33d0055-e600-4ad9-9adc-4ec539710201)
+![Sem título](https://github.com/user-attachments/assets/4808d5dd-2acc-4c90-ab26-bd4f63fcdffb)
 
   1) S3 Buckets: Comumente conhecido como S3 uma sigla para "Simple Storage Service", é um serviço de armazenamento de dados da AWS que se assemelha a um file server, mas com a peculiaridade de ser um serviço serverless. Sendo assim, os buckets S3 são utilizados nesta arquitetura para constituir as três camadas do DataLake da AbInbev, seguindo a estrutura de medalhão: abinbev_bucket_bronze, abinbev_bucket_silver, abinbev_bucket_gold. Além disso, haverá mais um bucket, que auxiliará como repositório do time e servirá para a configuração do MWAA (Managed Workflows for Apache Airflow)¹.
   ¹O serviço MWAA será explicado mais à frente.
