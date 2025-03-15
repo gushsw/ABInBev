@@ -5,7 +5,7 @@ import json
 iam = b3.client('iam')
 
 # Cria o usuário Admin
-iam.create_user(UserName='superfrete-admin')
+iam.create_user(UserName='abinbev-admin')
 
 # Política completa para Admin
 admin_policy = {
@@ -26,12 +26,10 @@ iam.create_role(
 )
 
 iam.put_role_policy(
-    RoleName='superfrete-admin-role',
+    RoleName='abinbev-admin-role',
     PolicyName='AdminAccess',
     PolicyDocument=json.dumps(admin_policy)
 )
 
 # Associa o usuário à role
-iam.add_user_to_group(UserName='superfrete-admin', GroupName='superfrete-admin-role')
-
-print("Usuário e role para Admin criados com sucesso!")
+iam.add_user_to_group(UserName='abinbev-admin', GroupName='abinbev-admin-role')
